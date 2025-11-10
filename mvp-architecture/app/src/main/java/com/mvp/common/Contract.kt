@@ -1,6 +1,7 @@
 package com.mvp.common
 
 interface Contract {
+    //Have M V P interfaces inside Contract
     interface Model {
         fun interface OnFinishListener {
             //Write all callback methods here in Model's Listener interface

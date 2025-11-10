@@ -14,16 +14,19 @@ import com.mvp.presenter.Presenter
 /**
  * https://www.geeksforgeeks.org/mvp-model-view-presenter-architecture-pattern-in-android-with-example/?ref=asr1
  *
+ * https://www.geeksforgeeks.org/difference-between-mvc-and-mvp-architecture-pattern-in-android/?ref=asr2
+ *
  * Activity implements our View contract
  */
 class MainActivity : ComponentActivity(), Contract.View {
     //Activity implements View contract so we can pass this as reference to our View Contract interface
-
     private val presenter = Presenter(this, Model())
+    private lateinit var nextButton : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
+       //nextButton = findViewById(R.id.next_button)
 
         findViewById<Button>(R.id.next_button).setOnClickListener {
             presenter.fetchNextAlphabet()
